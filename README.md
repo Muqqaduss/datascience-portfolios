@@ -1,2 +1,2 @@
-# datascience-portfolios
-This repository will encompass all the projects, their respective GitHub pages, and the project portfolio.
+# Career Recommendation Of Data Science & its Sub-Field
+Given the exponential growth of data science in the present era, our objective is to analyze the demand for data science and its subfield requirements. By doing so, we aim to address the significant challenges that data science candidates often encounter when transitioning to different cities or exploring other subfields within data science, such as machine learning and data analysis.
