@@ -1,4 +1,4 @@
-# Prior Knowledge
+# PRIOR KNOWLEDGE
 ---
 ### Key-factors of the domain
 When analyzing data science salaries in 2023, several key factors need to be considered to provide accurate and meaningful insights. These factors include:
@@ -35,5 +35,30 @@ Sources from which we collect data is
 
 # DATA PREPARATION
 ---
-**Exploratory Data Analysis**
+### Exploratory Data Analysis
 Our Dataset contains 3755 rows × 11 columns which include featuers of data science and these attributes has relationship among them and we'll explore the data by visualization with various libraries available in python to visualize data.
+
+### Importing Libraries
+We need to import libraries that are required to process dataset, which will be using to clean data and which are using to visualize data
+
+```python
+#Following libraries will be used to perform data exploration
+import pandas as pd
+import numpy as np
+import seaborn as sns                       #Visualisation
+import matplotlib.pyplot as plt             #Visualisation
+%matplotlib inline
+sns.set(color_codes=True)
+```
+
+### Loading the data into the data frame
+Loading the data into a data frame using the Python library pandas is the initial and crucial step in data exploration or exploratory data analysis. Hence, we must read our CSV file named "ds_salaries2023.csv" that contains a collection of rows and columns and is located in the directory.
+
+```python
+df = pd.read_csv("/content/drive/MyDrive/DSDataSet/ds_salaries2023.csv")
+df
+```
+
+![Data from creation](/assets/images/1png.png)
+
+
