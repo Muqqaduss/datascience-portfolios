@@ -1,5 +1,5 @@
 # Prior Knowledge
-
+---
 ### Key-factors of the domain
 When analyzing data science salaries in 2023, several key factors need to be considered to provide accurate and meaningful insights. These factors include:
 + **Work Year**: The number of hours or days an employee works per year, which can vary based on full-time, part-time, or contractual arrangements.
@@ -32,3 +32,8 @@ This is the prior knowledge phase to gather relevant data about career recommend
 
 Sources from which we collect data is 
 [Kaggle](https://www.kaggle.com/datasets)
+
+# DATA PREPARATION
+---
+**Exploratory Data Analysis**
+Our Dataset contains 3755 rows × 11 columns which include featuers of data science and these attributes has relationship among them and we'll explore the data by visualization with various libraries available in python to visualize data.
