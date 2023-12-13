@@ -1,6 +1,6 @@
-# Phase 1 - Prior Knowledge
+# Prior Knowledge
 
-## Key-factors of the domain
+### Key-factors of the domain
 When analyzing data science salaries in 2023, several key factors need to be considered to provide accurate and meaningful insights. These factors include:
 + **Work Year**: The number of hours or days an employee works per year, which can vary based on full-time, part-time, or contractual arrangements.
 + **Experience Level**: The number of years of relevant experience in the field of data science, which significantly influences salary levels.
@@ -13,8 +13,8 @@ When analyzing data science salaries in 2023, several key factors need to be con
 + **Remote Ratio**: The proportion of remote work allowed in the job, ranging from fully remote positions to those requiring on-site presence.
 + **Company Size**: The number of employees in the company, which can influence salary levels due to factors such as company revenue, funding, and market position.
 
-## Data Collection
+### Data Collection
 This is the prior knowledge phase to gather relevant data about career recommendation of data science, including its subfield such as data analyst, machine learning etc. We have sourced this data from kaggle to ensure that we meet our requirements then we can able to answer the business questions that are necessary in the data science process.
 
-Sources from which we collect data
-Kaggle - [https://www.kaggle.com/datasets]
+Sources from which we collect data is 
+[Kaggle](https://www.kaggle.com/datasets)
