@@ -12,3 +12,9 @@ When analyzing data science salaries in 2023, several key factors need to be con
 + **Employee Residence**: The location where the employee resides, as salaries can vary significantly based on the cost of living in different regions and countries.
 + **Remote Ratio**: The proportion of remote work allowed in the job, ranging from fully remote positions to those requiring on-site presence.
 + **Company Size**: The number of employees in the company, which can influence salary levels due to factors such as company revenue, funding, and market position.
+
+## Data Collection
+This is the prior knowledge phase to gather relevant data about career recommendation of data science, including its subfield such as data analyst, machine learning etc. We have sourced this data from kaggle to ensure that we meet our requirements then we can able to answer the business questions that are necessary in the data science process.
+
+Sources from which we collect data
+Kaggle - [https://www.kaggle.com/datasets]
