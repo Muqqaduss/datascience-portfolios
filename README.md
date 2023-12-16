@@ -61,4 +61,4 @@ df
 
 ![Data from creation](/assets/images/1png.png)
 
-
+Also we're going to show the information of the dataset which will help us to understand the data.
