@@ -87,6 +87,7 @@ memory usage: 322.8+ KB
 
 ### furthermore just to show the consitency of the data we're going to show the bottom rows of the dataset
 df.tail(5)
+![Data from creation](/assets/images/1png.png)
 
 
 
