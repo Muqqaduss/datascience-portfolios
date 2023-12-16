@@ -84,7 +84,8 @@ dtypes: int64(4), object(7)
 memory usage: 322.8+ KB
 
 
-#furthermore just to show the consitency of the data we're going to show the bottom rows of the dataset
+
+### furthermore just to show the consitency of the data we're going to show the bottom rows of the dataset
 df.tail(5)
 
 
