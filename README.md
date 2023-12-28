@@ -28,7 +28,6 @@ Sources from which we collect data
 
 # DATA PREPARATION
 ---
-### Exploratory Data Analysis
 Our Dataset contains 3755 rows × 11 columns which include featuers of data science and these attributes has relationship among them and we'll explore the data by visualization with various libraries available in python to visualize data.
 
 ### Importing Libraries
@@ -48,33 +47,16 @@ sns.set(color_codes=True)
 Loading the data into a data frame using the Python library pandas is the initial and crucial step in data exploration or exploratory data analysis. Hence, we must read our CSV file named "ds_salaries2023.csv" that contains a collection of rows and columns and is located in the directory.
 
 ```pytho
+from google.colab import drive
+drive.mount('/content/drive')
+```
+```pytho
 df = pd.read_csv("/content/drive/MyDrive/DSDataSet/ds_salaries2023.csv")
 df
 ```
+Now, we will demonstrate the size of our existing unstructured data set prior to cleaning, which will facilitate the comparison of its size post data preparation.
 
-
-
-Also we're going to show the information of the dataset which will help us to understand the data.
-```pytho
-df.info()
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 3755 entries, 0 to 3754
-Data columns (total 11 columns):
- #   Column              Non-Null Count  Dtype 
----  ------              --------------  ----- 
- 0   work_year           3755 non-null   int64 
- 1   experience_level    3755 non-null   object
- 2   employment_type     3755 non-null   object
- 3   job_title           3755 non-null   object
- 4   salary              3755 non-null   int64 
- 5   salary_currency     3755 non-null   object
- 6   salary_in_usd       3755 non-null   int64 
- 7   employee_residence  3755 non-null   object
- 8   remote_ratio        3755 non-null   int64 
- 9   company_location    3755 non-null   object
- 10  company_size        3755 non-null   object
-dtypes: int64(4), object(7)
-memory usage: 322.8+ KB
+![Data shape and size](/assets/images/shape_size.png)
 
 
 
