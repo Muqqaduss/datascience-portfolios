@@ -443,6 +443,20 @@ sns.boxplot(x=df['salary_USD'], color = 'green')
 
 ![first desc img](/assets/images/empSalary_boxPlot2.png)
 
+## 3.6 Work Year and Salary
+```pytho
+df['work_year'].unique()
+```
+array([2023, 2022, 2021])
+
+```pytho
+fig, ax = plt.subplots(1,2, figsize = (15, 5))
+sns.boxplot(x = 'work_year', y='salary_USD', data = df, ax =ax[0]).set_title('Work Year vs Salary')
+sns.violinplot(x = 'work_year', y='salary_USD', data = df, ax =ax[1]).set_title('Work Year vs Salary')
+```
+
+![first desc img](/assets/images/workyearAndSalary.png)
+
 
 
 
