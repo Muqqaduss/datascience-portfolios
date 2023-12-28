@@ -78,7 +78,7 @@ The DataFrame contains data description and generates statistical summaries that
 It is important to note that the dataset may consist of attributes of different types. In situations where the data is categorical, it is crucial to transform them into continuous numeric attributes.
 ![first desc img](/assets/images/dtype1.png)
 
-
+---
 # 3 - EXPLORATORY DATA ANALYSIS (EDA)
 In the exploratory data analysis, We will be looking at the data and try to understand the data. I will begin by looking at the distribution of data across the dat-set, followed by visualising the data to understand the relationship between the features and the target variable.
 
@@ -144,8 +144,139 @@ plt.savefig("exp_level_distribution.png")
 ```
 ![first desc img](/assets/images/ExLevel_pieChart.png)
 
+## 3.3 Employment Type
+The code below demonstrates the total count of job types present in our dataset.
+```pytho
+df['employment_type'].value_counts()
+```
 
+Full-Time    2337
 
+Part-Time      17
 
+Contract       10
+
+Freelance      10
+
+Name: employment_type, dtype: int64
+
+```pytho
+plt.figure(figsize=(16,20))
+plt.subplot(121)
+df['employment_type'].value_counts().plot(kind="pie",autopct="%2f",explode=(0,0,0,0))
+plt.title('Job count by work experience')
+plt.savefig("employment_type.png")
+plt.legend()
+plt.show()
+plt.savefig("employment_type_distribution.png")
+```
+![first desc img](/assets/images/empType_pieChart.png)
+
+The graph and statistics above indicate a substantial higher number of job opportunities available for full-time employment in the field of data science.
+
+## 3.4 Job Title
+
+### 3.4.a Job title with fewest no. of jobs
+We are going to visualize the job titles with the lowest number of job occurrences in our dataset.
+
+```pytho
+df.employment_title.value_counts().nsmallest(50).plot(kind='bar',figsize=(10,5),color="red")
+plt.title('Job Title with the fewest number of jobs')
+plt.ylabel('ratio')
+plt.xlabel('Employment/Job Title')
+```
+![first desc img](/assets/images/jobTitle_bar.png)
+The dataset contains only one occurrence of the following job titles.
+
+```pytho
+df['employment_title'].value_counts()[df['employment_title'].value_counts() < 2]
+```
+
+Head of Machine Learning               1
+
+Principal Data Architect               1
+
+Staff Data Scientist                   1
+
+Product Data Scientist                 1
+
+Cloud Data Architect                   1
+
+BI Data Engineer                       1
+
+Power BI Developer                     1
+
+Data Science Tech Lead                 1
+
+Data Management Specialist             1
+
+Principal Machine Learning Engineer    1
+
+Manager Data Management                1
+
+Marketing Data Engineer                1
+
+Azure Data Engineer                    1
+
+Compliance Data Analyst                1
+
+Deep Learning Researcher               1
+
+Staff Data Analyst                     1
+
+Data DevOps Engineer                   1
+
+Finance Data Analyst                   1
+
+Name: employment_title, dtype: int64
+
+### 3.4.b Job title with highest no. of jobs
+We are going to visualize the job titles with the highest number of job occurrences in our dataset.
+```pytho
+df.employment_title.value_counts().nlargest(50).plot(kind='bar',figsize=(10,5),color="green")
+plt.title('Job Title with the highest number of jobs')
+plt.ylabel('ratio')
+plt.xlabel('Employment/Job Title')
+```
+![first desc img](/assets/images/jobTitle_bar2.png)
+
+### 3.4.c Top 10 highest No. of job in data science
+The dataset reveals the visualization by the pie chart of the employment sector that has the highest number of jobs.
+```pytho
+df['employment_title'].value_counts().sort_values(ascending=False).head(10)
+```
+Data Engineer                521
+
+Data Scientist               479
+
+Data Analyst                 348
+
+Machine Learning Engineer    196
+
+Analytics Engineer            85
+
+Data Architect                64
+
+Research Scientist            63
+
+Data Science Manager          52
+
+ML Engineer                   34
+
+Research Engineer             33
+
+Name: employment_title, dtype: int64
+
+```pytho
+plt.figure(figsize=(16,20))
+plt.subplot(1,2,1)
+df['employment_title'].value_counts().sort_values(ascending=False).head(10).plot(kind="pie",shadow=True,explode = (0.3,0,0,0,0,0,0,0,0,0),autopct="%2f")
+plt.title('Top 10 Job Count by Title')
+plt.ylabel('Employment/Job Title')
+plt.legend()
+plt.savefig("most_employment_title.png")
+plt.show()
+```
+![first desc img](/assets/images/jobTitle_bar3.png)
 
 
