@@ -58,9 +58,18 @@ Now, we will demonstrate the size of our existing unstructured data set prior to
 
 ![Data shape and size](/assets/images/shape_size.png)
 
+The execution of the given line of code will generate the visualization of the dataset, displaying its rows and columns.
 
+```pytho
+df #just to show the consitency of the data we're going to show the top 5 and bottom 5 rows of the dataset
+```
 
+![first df img](/assets/images/df1.png)
 
+Furthermore, we will present the dataset's information, which will help us to understand the dataset.
 
+![first info img](/assets/images/info1.png)
 
+The DataFrame contains data description and generates statistical summaries that depict the distribution's central tendency and shape, excluding NaN values. Additionally, the percentile indicates the number of values that are less than the specified percentile, provided that the DataFrame comprises numerical data.
 
+![first desc img](/assets/images/desc1.png)
