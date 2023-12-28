@@ -73,3 +73,79 @@ Furthermore, we will present the dataset's information, which will help us to un
 The DataFrame contains data description and generates statistical summaries that depict the distribution's central tendency and shape, excluding NaN values. Additionally, the percentile indicates the number of values that are less than the specified percentile, provided that the DataFrame comprises numerical data.
 
 ![first desc img](/assets/images/desc1.png)
+
+### Data type verification
+It is important to note that the dataset may consist of attributes of different types. In situations where the data is categorical, it is crucial to transform them into continuous numeric attributes.
+![first desc img](/assets/images/dtype1.png)
+
+
+# 3 - EXPLORATORY DATA ANALYSIS (EDA)
+In the exploratory data analysis, We will be looking at the data and try to understand the data. I will begin by looking at the distribution of data across the dat-set, followed by visualising the data to understand the relationship between the features and the target variable.
+
+## 3.1 Work Year
+We will showcase the dataset comprising the work done in the years 2020 to 2023.
+```pytho
+df['work_year'].value_counts()
+```
+2023    1065
+
+2022    1011
+
+2021    223
+
+2020    75
+
+Name: work_year, dtype: int64
+
+```pytho
+plt.figure(figsize=(16,20))
+plt.subplot(121)
+df['work_year'].value_counts().plot(kind="pie",autopct="%2f",explode=(0.1,0.1,0,0))
+plt.title('Job Count by Year')
+plt.ylabel('Work Year Count')
+plt.savefig("work_year.png")
+plt.legend()
+plt.show()
+plt.savefig("work_year_distribution.png")
+```
+![first desc img](/assets/images/workYear_pieChart.png)
+
+From above numbers we can say that, we have
+```pytho
+# A data from 2020 to 2023. Total we have 4 year of data.
+```
+Based on above counts/data its looks like the requirement of data scientist increased as per years.
+
+## 3.2 Experience Level
+The Following lines of code demonstrate the count of job positions categorized by their level of experience in the field of data science.
+
+```pytho
+df['experience_level'].value_counts()
+```
+Senior-Level / Expert         1395
+
+Mid-Level / Intermediate       623
+
+Entry-Level / Junior           261
+
+Executive-Level / Director      95
+
+Name: experience_level, dtype: int64
+
+```pyth
+plt.figure(figsize=(16,20))
+plt.subplot(121)
+df['experience_level'].value_counts().plot(kind="pie",autopct="%2f",explode=(0,0,0,0))
+plt.title('Job count by work experience')
+plt.savefig("exp_level.png")
+plt.legend()
+plt.show()
+plt.savefig("exp_level_distribution.png")
+```
+![first desc img](/assets/images/ExLevel_pieChart.png)
+
+
+
+
+
+
