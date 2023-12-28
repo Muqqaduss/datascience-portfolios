@@ -279,4 +279,177 @@ plt.show()
 ```
 ![first desc img](/assets/images/jobTitle_bar3.png)
 
+## 3.5 Employee Salary
+The visualization of employees' salaries is necessary in order to identify any outliers within the dataset. To detect these outliers, it is essential to visualize salary column.
+
+### 3.5.a Detecting Outliers
+**Box Plot Before Removing Outliers**
+
+```pytho
+sns.boxplot(x=df['salary_USD'], color = 'yellow')
+```
+![first desc img](/assets/images/empSalary_boxPlot.png)
+
+The box plot above illustrates that the majority of employee salaries fall under 200,000, while a few salaries are beyond the range of 300,000 that may become an outliers and if there are any outliers in our dataset, it is necessary to eliminate them by identifying the quantile in our dataset.
+
+### 3.5.b Removing Outliers
+**Finding 1st Quartile, 3rd Quartile and Interquartile Range**
+
+```pytho
+Q1 = df.quantile(0.25, numeric_only = True)
+Q3 = df.quantile(0.75, numeric_only = True)
+IQR = Q3 - Q1
+print('Q1(quantile - 0.25) = ', Q1)
+print('----------------------------------------------')
+print('Q3(quantile - 0.75) = ', Q3)
+print('----------------------------------------------')
+print('IQR(Q3 - Q1) = ', IQR)
+```
+
+<table>
+  <tr>
+    <td>Q1(quantile - 0.25) =  work_year      2022.0</td>
+  </tr>
+  <tr>
+    <td>salary_USD    82783.0</td>
+  </tr>
+  <tr>
+    <td>Name: 0.25, dtype: float64</td>
+  </tr>
+    <tr>
+    <td>----------------------------------------------</td>
+  </tr>
+    <tr>
+    <td>Q3(quantile - 0.75) =  work_year       2023.0</td>
+  </tr>
+  <tr>
+    <td>salary_USD    175100.0</td>
+  </tr>
+    <tr>
+    <td> Name: 0.75, dtype: float64</td>
+  </tr>
+    <tr>
+    <td>----------------------------------------------</td>
+  </tr>
+   <tr>
+    <td>IQR(Q3 - Q1) =  work_year         1.0</td>
+  </tr>
+   <tr>
+    <td>salary_USD    92317.0</td>
+  </tr>
+   <tr>
+    <td>dtype: float64</td>
+  </tr>
+</table>
+
+**Removing Outliers from dataframe**
+```pytho
+df_fix = df[~(((df < (Q1 - 1.5 *   IQR)) | (df > (Q3 + 1.5 *   IQR))).any(axis=1))]
+df_fix.head(5)
+```
+
+```pytho
+<ipython-input-75-4232eee1673b>:1: FutureWarning: Automatic reindexing on DataFrame vs Series comparisons is deprecated and will raise ValueError in a future version. Do `left, right = left.align(right, axis=1, copy=False)` before e.g. `left == right`
+  df_fix = df[~(((df < (Q1 - 1.5 *   IQR)) | (df > (Q3 + 1.5 *   IQR))).any(axis=1))]
+```
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>work_year</th>
+      <th>experience_level</th>
+      <th>employment_type</th>
+      <th>employment_title</th>
+      <th>salary_USD</th>
+      <th>employee_location</th>
+      <th>employment_location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023</td>
+      <td>Senior-Level / Expert</td>
+      <td>Full-Time</td>
+      <td>Principal Data Scientist</td>
+      <td>85847</td>
+      <td>Spain</td>
+      <td>Spain</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023</td>
+      <td>Mid-Level / Intermediate</td>
+      <td>Contract</td>
+      <td>ML Engineer</td>
+      <td>30000</td>
+      <td>United States of America</td>
+      <td>United States of America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023</td>
+      <td>Mid-Level / Intermediate</td>
+      <td>Contract</td>
+      <td>ML Engineer</td>
+      <td>25500</td>
+      <td>United States of America</td>
+      <td>United States of America</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023</td>
+      <td>Senior-Level / Expert</td>
+      <td>Full-Time</td>
+      <td>Data Scientist</td>
+      <td>175000</td>
+      <td>Canada</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023</td>
+      <td>Senior-Level / Expert</td>
+      <td>Full-Time</td>
+      <td>Data Scientist</td>
+      <td>120000</td>
+      <td>Canada</td>
+      <td>Canada</td>
+    </tr>
+  </tbody>
+</table>
+
+**Dataset Shape before and after removing Outliers**
+
+```pytho
+print("Dataset shape before removing Outliers :", df.shape)
+print("Dataset shape before after Outliers :",  df_fix.shape)
+print("Outliers Rows in dataset :", (df.size - df_fix.size))
+df = df_fix
+```
+
+Dataset shape before removing Outliers : (2374, 7)
+
+Dataset shape before after Outliers : (2273, 7)
+
+Outliers Rows in dataset : 707
+
+### 3.5.c Box Plot After Removing Outliers
+
+```python
+sns.boxplot(x=df['salary_USD'], color = 'green')
+```
+
+![first desc img](/assets/images/empSalary_boxPlot2.png)
+
+
+
+
+
+
+
+
+
+
 
