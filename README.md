@@ -524,7 +524,7 @@ plt.gcf().text(.12, .92,
 
 plt.show()
 ```
-![first desc img](/assets/images/averagesalarybasedonexperiancetype.png)
+![first desc img](/assets/images/averagesalarybasedexperiancetype.png)
 
 
 
