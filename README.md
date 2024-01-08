@@ -471,9 +471,9 @@ plt.gcf().text(.15, .90,
                fontsize = 17,
                color='Black')
 plt.show()
+```
 
-![first desc img](/assets/images/assets/images/highestjobtitle.png)
-
+![first desc img](/assets/images/highestjobtitle.png)
 
 
 
