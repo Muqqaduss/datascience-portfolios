@@ -508,6 +508,24 @@ plt.gcf().text(.12, .92,
 plt.show()
 ```
 ![first desc img](/assets/images/averagesalarybasedonexperiance.png)
+## 3.9 Employment Type and Salary
+``` pytho
+data = df.groupby(['work_year', 'employment_type']).salary_USD.mean().reset_index()
+sns.barplot(x= data['employment_type'], y= data['salary_USD'], hue= data['work_year'], palette='dark:#5A9_r')
+
+sns.set(rc={'xtick.labelsize':10,
+            'ytick.labelsize':10})
+
+plt.gcf().text(.12, .92,
+               "Average salary based on employment type",
+               fontsize = 17,
+               color='Black')
+
+
+plt.show()
+```
+![first desc img](/assets/images/averagesalarybasedonexperiancetype.png)
+
 
 
 
