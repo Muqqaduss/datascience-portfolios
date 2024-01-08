@@ -493,6 +493,23 @@ plt.show()
 ```
 ![first desc img](assets/images/lowestsalaryjobtitle.png)
 
+## 3.8 Experience Level and Salary 
+```pytho
+data = df.groupby(['work_year', 'experience_level']).salary_USD.mean().reset_index()
+sns.barplot(x= data['experience_level'], y= data['salary_USD'], hue= data['work_year'], palette='dark:#5A9_r')
+
+sns.set(rc={'xtick.labelsize':7,
+            'ytick.labelsize':10})
+plt.gcf().text(.12, .92,
+               "Average salary based on experience level",
+               fontsize = 17,
+               color='Black')
+
+plt.show()
+```
+![first desc img](.assets/images/averagesalarybasedonexperiance.png)
+
+
 
 
 
