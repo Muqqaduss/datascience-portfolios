@@ -475,6 +475,23 @@ plt.show()
 
 ![first desc img](/assets/images/highestjobtitle.png)
 
+## 3.7.b Lowest Salary Job title
+```pytho
+plt.figure(figsize=(12,5))
+data = df.groupby('employment_title').mean('numeric')['salary_USD'].reset_index().sort_values(by='salary_USD', ascending=False).tail(12)
+
+sns.barplot(y=data['employment_title'], x=data['salary_USD'],palette='dark:#5A9_r')
+
+sns.set(rc={'xtick.labelsize':10,
+            'ytick.labelsize':10})
+
+plt.gcf().text(.15, .90,
+               "Top-12 lowest salary job titles",
+               fontsize = 17,
+               color='Black')
+plt.show()
+```
+
 
 
 
