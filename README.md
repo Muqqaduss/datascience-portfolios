@@ -526,7 +526,33 @@ plt.show()
 ```
 ![first desc img](/assets/images/averagesalarybasedexperiancetype.png)
 
+## 3.10 Job Location and Salary
+```pytho
+data = df.groupby('employment_location').mean('numeric')['salary_USD'].reset_index().sort_values(by='salary_USD', ascending=False).head(15)
+sns.barplot(y=data['employment_location'], x=data['salary_USD'])
 
+sns.set(rc={'xtick.labelsize':10,
+            'ytick.labelsize':10})
+
+plt.gcf().text(.01, .90,
+               "Top 15 countries(Job location) with highest salary",
+               fontsize = 17,
+               color='Black')
+plt.show()
+```
+data = df.groupby('employment_location').mean('numeric')['salary_USD'].reset_index().sort_values(by='salary_USD', ascending=False).head(15)
+sns.barplot(y=data['employment_location'], x=data['salary_USD'])
+
+sns.set(rc={'xtick.labelsize':10,
+            'ytick.labelsize':10})
+
+plt.gcf().text(.01, .90,
+               "Top 15 countries(Job location) with highest salary",
+               fontsize = 17,
+               color='Black')
+plt.show()
+```
+![first desc img](/assets/images/top15countriesjoblocation.png)
 
 
 
