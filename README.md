@@ -457,6 +457,21 @@ sns.violinplot(x = 'work_year', y='salary_USD', data = df, ax =ax[1]).set_title(
 
 ![first desc img](/assets/images/workyearandsalary.png)
 
+## 3.7 Job title and Salary
+## 3.7.a Highest Salary Job title
+```pytho
+data = df.groupby('employment_title').mean('numeric')['salary_USD'].reset_index().sort_values(by='salary_USD', ascending=False).head(12)
+sns.barplot(y=data['employment_title'], x=data['salary_USD'], palette='dark:#5A9_r')
+
+sns.set(rc={'xtick.labelsize':10,
+            'ytick.labelsize':10})
+
+plt.gcf().text(.15, .90,
+               "Top-12 highest salary job titles",
+               fontsize = 17,
+               color='Black')
+plt.show()
+
 
 
 
