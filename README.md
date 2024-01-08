@@ -491,7 +491,7 @@ plt.gcf().text(.15, .90,
                color='Black')
 plt.show()
 ```
-![first desc img](assets/images/lowestsalaryjobtitle.png
+![first desc img](assets/images/lowestsalaryjobtitle.png)
 
 
 
