@@ -455,7 +455,7 @@ sns.boxplot(x = 'work_year', y='salary_USD', data = df, ax =ax[0]).set_title('Wo
 sns.violinplot(x = 'work_year', y='salary_USD', data = df, ax =ax[1]).set_title('Work Year vs Salary')
 ```
 
-![first desc img](/assets/images/workyearAndSalary.png)
+![first desc img](/assets/images/workyearandsalary.png)
 
 
 
