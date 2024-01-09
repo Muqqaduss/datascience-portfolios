@@ -555,6 +555,10 @@ plt.show()
 
 ![first desc img](/assets/images/top15location.png)
 
+## 3.11 Employee Location and Salary
+
+
+
 
 
 
