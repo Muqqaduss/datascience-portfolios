@@ -552,7 +552,7 @@ plt.gcf().text(.01, .90,
                color='Black')
 plt.show()
 ```
-![first desc img](/assets/images/top15joblocation.png)
+![first desc img](/assets/images/top15location.png)
 
 
 
